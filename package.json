@@ -1,0 +1,41 @@
+{
+  "name": "health-journal-app",
+  "version": "1.0.0",
+  "description": "health journal app to track your progress in fitness",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build",
+    "test": "mocha -u tdd --reporter spec --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarrenVictoriano/health-journal-app.git"
+  },
+  "author": "Darren and Sai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarrenVictoriano/health-journal-app/issues"
+  },
+  "homepage": "https://github.com/DarrenVictoriano/health-journal-app#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0",
+    "if-env": "^1.0.4",
+    "nodemon": "^1.19.1"
+  }
+}
