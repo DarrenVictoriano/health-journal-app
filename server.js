@@ -1,9 +1,10 @@
 // Initialize Express
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 8080;
 
 // Initialize DB and Routes here
+// example for mongoDB
 // const mongoose = require("mongoose");
 // const routes = require("./routes");
 
@@ -16,10 +17,11 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-// Add routes for API and View
+// Add routes
 // app.use(routes);
 
-// Connect to MongoDB
+// Connect to DB
+// Example for mongoDB
 // let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mad";
 // mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
