@@ -4,8 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // Initialize DB and Routes here
-// example for mongoDB
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 // const routes = require("./routes");
 
 // Define Middlewares Here
@@ -20,10 +19,9 @@ if (process.env.NODE_ENV === "production") {
 // Add routes
 // app.use(routes);
 
-// Connect to DB
-// Example for mongoDB
-// let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mad";
-// mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+// Connect to MongoDB
+let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/hjadb";
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Start the Server
 app.listen(PORT, function () {
